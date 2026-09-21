@@ -1,9 +1,9 @@
 # ledger-pipeline
 
-A dependency-free Python ETL for a messy transaction ledger. Reads CSV and
-JSON, validates every row, and routes bad rows to a dead-letter queue with
-reason codes — nothing is dropped silently. Airflow and dbt on Databricks
-Free Edition are the planned orchestration and warehouse layers.
+A dependency-free Python ETL for a messy transaction ledger. Reads a CSV
+export, validates every row, and routes bad rows to a dead-letter queue with
+reason codes — nothing is dropped silently. A JSON export of the same data,
+plus Airflow and dbt on Databricks Free Edition, are the planned next layers.
 
 ```powershell
 python main.py
@@ -120,7 +120,9 @@ them mean the same thing. `if amount:` throws away `T0013` and `T0044` —
 real transactions that happen to be zero. The check is
 `if amount not in (None, "")`.
 
-**The CSV and the JSON disagree.** Same 51 transactions, two exports:
+**The same data exports two different ways.** [data/](data/) holds the 51
+transactions twice — once as CSV, once as JSON — and they disagree on almost
+everything:
 
 | | CSV | JSON |
 |---|---|---|
@@ -130,7 +132,8 @@ real transactions that happen to be zero. The check is
 | blank category | `""` | the key is **absent** |
 | tags | cannot express them | a list |
 
-Writing one validator that copes with both is most of the work.
+Only the CSV path is wired up today. Feeding the JSON through the same
+validator needs a normaliser in front of `Record` — see *Next up* below.
 
 **Fail loudly.** `except Exception: return None` turns a broken job into a
 green job with an empty table. Catch the one error you can actually handle.
@@ -166,7 +169,7 @@ what real data feels like.
 ```
 ledger/
 ├── model.py       Record, Transaction, DeadLetterRecord, RunSummary, ReasonCode
-├── read.py        CSV and JSON into raw dicts
+├── read.py        CSV and JSON into raw dicts (only CSV is wired up)
 ├── validate.py    one rule per method, returns a ReasonCode or None
 ├── transform.py   validated Record -> frozen Transaction
 └── summarize.py   counts per run, including a tally per reason
@@ -188,16 +191,16 @@ real export, plus two smoke tests asserting the real files still have 51 rows
 
 ---
 
-## Not built yet
+## Next up
 
-`dags/` and `dbt/` are scaffolding for the next phase. They are empty on
-purpose.
+`dags/` and `dbt/` are scaffolding. They are empty on purpose.
 
-| Layer | Job |
-|---|---|
-| `ledger/` | parse, validate, dead-letter — **this is what exists** |
-| Airflow | scheduling, retries, task ordering |
-| dbt on Databricks Free Edition | joins, aggregates, marts — SQL, not Python |
+| Layer | Job | Status |
+|---|---|---|
+| `ledger/` | parse, validate, dead-letter | **working** |
+| JSON ingestion | normalise the nested export into a `Record` | planned |
+| Airflow | scheduling, retries, task ordering | planned |
+| dbt on Databricks Free Edition | joins, aggregates, marts — SQL, not Python | planned |
 
-The Python layer is finished first on purpose: orchestration around a
-pipeline that drops rows silently only schedules the problem.
+The CSV path is finished first on purpose. Orchestration around a pipeline
+that drops rows silently only schedules the problem.
