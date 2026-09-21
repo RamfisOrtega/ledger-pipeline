@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.vscode/
+.idea/
+.env
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/

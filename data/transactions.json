@@ -1,0 +1,780 @@
+[
+  {
+    "txn_id": "T0001",
+    "booked_at": "2026-03-01",
+    "account": "A1",
+    "counterparty": {
+      "name": "Helvetia Payroll AG",
+      "country": "CH"
+    },
+    "amount": 45.0,
+    "currency": "CHF",
+    "fx_rate_to_chf": 1.0,
+    "status": "booked",
+    "tags": [],
+    "category": "payroll"
+  },
+  {
+    "txn_id": "T0002",
+    "booked_at": "2026-03-02",
+    "account": "A3",
+    "counterparty": {
+      "name": "Zurich Office Rent GmbH",
+      "country": "CH"
+    },
+    "amount": 182.53,
+    "currency": "GBP",
+    "fx_rate_to_chf": 1.12,
+    "status": "booked",
+    "tags": [],
+    "category": "tax"
+  },
+  {
+    "txn_id": "T0003",
+    "booked_at": "2026-03-03",
+    "account": "A5",
+    "counterparty": {
+      "name": "Nordwind Logistics BV",
+      "country": "NL"
+    },
+    "amount": 320.06,
+    "currency": "usd",
+    "fx_rate_to_chf": 0.88,
+    "status": "booked",
+    "tags": [],
+    "category": "software"
+  },
+  {
+    "txn_id": "T0004",
+    "booked_at": "2026-03-04",
+    "account": "A2",
+    "counterparty": {
+      "name": "Arc Cloud Services Inc",
+      "country": "US"
+    },
+    "amount": 457.59,
+    "currency": "EUR",
+    "fx_rate_to_chf": 0.94,
+    "status": "pending",
+    "tags": [],
+    "category": "energy"
+  },
+  {
+    "txn_id": "T0005",
+    "booked_at": "2026-03-05",
+    "account": "A4",
+    "counterparty": {
+      "name": "Baumann Druck AG",
+      "country": "CH"
+    },
+    "amount": 595.12,
+    "currency": "CHF",
+    "fx_rate_to_chf": 1.0,
+    "status": "booked",
+    "tags": [
+      "recurring",
+      "reviewed"
+    ],
+    "category": "travel"
+  },
+  {
+    "txn_id": "T0006",
+    "booked_at": "2026-03-06",
+    "account": "A1",
+    "counterparty": {
+      "name": "Lumen Analytics Ltd",
+      "country": "GB"
+    },
+    "amount": 732.65,
+    "currency": "GBP",
+    "fx_rate_to_chf": 1.12,
+    "status": "failed",
+    "tags": [],
+    "category": "rent"
+  },
+  {
+    "txn_id": "T0007",
+    "booked_at": "2026-03-07",
+    "account": "A3",
+    "counterparty": {
+      "name": "Sudmarkt Espresso SRL",
+      "country": "IT"
+    },
+    "amount": null,
+    "currency": "USD",
+    "fx_rate_to_chf": 0.88,
+    "status": "booked",
+    "tags": [],
+    "category": "supplies"
+  },
+  {
+    "txn_id": "T0008",
+    "booked_at": "2026-03-08",
+    "account": "A5",
+    "counterparty": {
+      "name": "Federal Tax Office",
+      "country": "CH"
+    },
+    "amount": 1007.71,
+    "currency": "EUR",
+    "fx_rate_to_chf": 0.94,
+    "status": "booked",
+    "tags": [],
+    "category": "logistics"
+  },
+  {
+    "txn_id": "T0009",
+    "booked_at": "2026-03-09",
+    "account": "A2",
+    "counterparty": {
+      "name": "Arc  Cloud   Services Inc",
+      "country": "CH"
+    },
+    "amount": 1145.24,
+    "currency": "CHF",
+    "fx_rate_to_chf": 1.0,
+    "status": "booked",
+    "tags": [],
+    "category": "payroll"
+  },
+  {
+    "txn_id": "T0010",
+    "booked_at": "2026-03-10",
+    "account": "A4",
+    "counterparty": {
+      "name": "Pole Star Energy SA",
+      "country": "FR"
+    },
+    "amount": 1282.77,
+    "currency": "GBP",
+    "fx_rate_to_chf": 1.12,
+    "status": "pending",
+    "tags": [],
+    "category": "tax"
+  },
+  {
+    "txn_id": "T0011",
+    "booked_at": "2026-03-11",
+    "account": "A1",
+    "counterparty": {
+      "name": "Helvetia Payroll AG",
+      "country": "CH"
+    },
+    "amount": 1420.3,
+    "currency": "USD",
+    "fx_rate_to_chf": null,
+    "status": "booked",
+    "tags": [],
+    "category": "software"
+  },
+  {
+    "txn_id": "T0012",
+    "booked_at": "2026-03-12",
+    "account": "A3",
+    "counterparty": {
+      "name": "Zurich Office Rent GmbH",
+      "country": "CH"
+    },
+    "amount": 1557.83,
+    "currency": "EUR",
+    "fx_rate_to_chf": 0.94,
+    "status": "failed",
+    "tags": [
+      "recurring"
+    ],
+    "category": "energy"
+  },
+  {
+    "txn_id": "T0013",
+    "booked_at": "2026-03-13",
+    "account": "A5",
+    "counterparty": {
+      "name": "Nordwind Logistics BV",
+      "country": "NL"
+    },
+    "amount": 0.0,
+    "currency": "CHF",
+    "fx_rate_to_chf": 1.0,
+    "status": "booked",
+    "tags": [],
+    "category": "travel"
+  },
+  {
+    "txn_id": "T0014",
+    "booked_at": "2026-03-14",
+    "account": "A2",
+    "counterparty": {
+      "name": "Arc Cloud Services Inc",
+      "country": "US"
+    },
+    "amount": 1832.89,
+    "currency": "GBP",
+    "fx_rate_to_chf": 1.12,
+    "status": "booked",
+    "tags": [],
+    "category": "rent"
+  },
+  {
+    "txn_id": "T0015",
+    "booked_at": "2026-03-15",
+    "account": "A4",
+    "counterparty": {
+      "name": "Baumann Druck AG",
+      "country": "CH"
+    },
+    "amount": 1970.42,
+    "currency": "USD",
+    "fx_rate_to_chf": 0.88,
+    "status": "booked",
+    "tags": [],
+    "category": "supplies"
+  },
+  {
+    "txn_id": "T0016",
+    "booked_at": "2026-03-16",
+    "account": "A1",
+    "counterparty": {
+      "name": "Lumen Analytics Ltd",
+      "country": "GB"
+    },
+    "amount": 2107.95,
+    "currency": "EUR",
+    "fx_rate_to_chf": 0.94,
+    "status": "pending",
+    "tags": [],
+    "category": "logistics"
+  },
+  {
+    "txn_id": "T0017",
+    "booked_at": "2026-03-17",
+    "account": "A3",
+    "counterparty": {
+      "name": "Sudmarkt Espresso SRL",
+      "country": "IT"
+    },
+    "amount": 2245.48,
+    "currency": "chf",
+    "fx_rate_to_chf": 1.0,
+    "status": "booked",
+    "tags": [],
+    "category": "payroll"
+  },
+  {
+    "txn_id": "T0018",
+    "booked_at": "2026-03-18",
+    "account": "A5",
+    "counterparty": {
+      "name": "Federal Tax Office",
+      "country": "CH"
+    },
+    "amount": 2383.01,
+    "currency": "GBP",
+    "fx_rate_to_chf": 1.12,
+    "status": "failed",
+    "tags": [],
+    "category": "tax"
+  },
+  {
+    "txn_id": "T0019",
+    "booked_at": "2026-03-19",
+    "account": "A2",
+    "counterparty": {
+      "name": "Kessler Reisen AG",
+      "country": "CH"
+    },
+    "amount": 2520.54,
+    "currency": "USD",
+    "fx_rate_to_chf": 0.88,
+    "status": "booked",
+    "tags": []
+  },
+  {
+    "txn_id": "T0020",
+    "booked_at": "2026-03-20",
+    "account": "A4",
+    "counterparty": {
+      "name": "Pole Star Energy SA",
+      "country": "FR"
+    },
+    "amount": 2658.07,
+    "currency": "EUR",
+    "fx_rate_to_chf": 0.94,
+    "status": "booked",
+    "tags": [],
+    "category": "energy"
+  },
+  {
+    "txn_id": "T0021",
+    "booked_at": "2026-03-21",
+    "account": "A1",
+    "counterparty": {
+      "name": "Helvetia Payroll AG",
+      "country": "CH"
+    },
+    "amount": -480.25,
+    "currency": "CHF",
+    "fx_rate_to_chf": 1.0,
+    "status": "booked",
+    "tags": [
+      "refund"
+    ],
+    "category": "refund"
+  },
+  {
+    "txn_id": "T0022",
+    "booked_at": "2026-03-22",
+    "account": "A3",
+    "counterparty": {
+      "name": "Zurich Office Rent GmbH",
+      "country": "CH"
+    },
+    "amount": 2933.13,
+    "currency": "GBP",
+    "fx_rate_to_chf": 1.12,
+    "status": "pending",
+    "tags": [],
+    "category": "rent"
+  },
+  {
+    "txn_id": "T0023",
+    "booked_at": "2026-03-23",
+    "account": "A5",
+    "counterparty": {
+      "name": " Lumen Analytics Ltd ",
+      "country": "NL"
+    },
+    "amount": 3070.66,
+    "currency": "USD",
+    "fx_rate_to_chf": 0.88,
+    "status": "booked",
+    "tags": [],
+    "category": "supplies"
+  },
+  {
+    "txn_id": "T0024",
+    "booked_at": "2026-03-24",
+    "account": "A2",
+    "counterparty": {
+      "name": "Arc Cloud Services Inc",
+      "country": "US"
+    },
+    "amount": 3208.19,
+    "currency": "EUR",
+    "fx_rate_to_chf": 0.94,
+    "status": "failed",
+    "tags": [],
+    "category": "logistics"
+  },
+  {
+    "txn_id": "T0025",
+    "booked_at": "2026-03-25",
+    "account": "A4",
+    "counterparty": {
+      "name": "Baumann Druck AG",
+      "country": "CH"
+    },
+    "amount": 3345.72,
+    "currency": "CHF",
+    "fx_rate_to_chf": 1.0,
+    "status": "booked",
+    "tags": [],
+    "category": "payroll"
+  },
+  {
+    "txn_id": "T0026",
+    "booked_at": "2026-03-26",
+    "account": "A1",
+    "counterparty": {
+      "name": "Lumen Analytics Ltd",
+      "country": "GB"
+    },
+    "amount": 3483.25,
+    "currency": "GBP",
+    "fx_rate_to_chf": 0.0,
+    "status": "booked",
+    "tags": [],
+    "category": "tax"
+  },
+  {
+    "txn_id": "T0027",
+    "booked_at": "2026-03-27",
+    "account": "A3",
+    "counterparty": {
+      "name": "Sudmarkt Espresso SRL",
+      "country": "IT"
+    },
+    "amount": 3620.78,
+    "currency": "USD",
+    "fx_rate_to_chf": 0.88,
+    "status": "booked",
+    "tags": [],
+    "category": "software"
+  },
+  {
+    "txn_id": "T0028",
+    "booked_at": "2026-03-28",
+    "account": "A5",
+    "counterparty": {
+      "name": "Federal Tax Office",
+      "country": "CH"
+    },
+    "amount": "1,250.00",
+    "currency": "EUR",
+    "fx_rate_to_chf": 0.94,
+    "status": "pending",
+    "tags": [],
+    "category": "energy"
+  },
+  {
+    "txn_id": "T0029",
+    "booked_at": "2026-03-01",
+    "account": "A2",
+    "counterparty": {
+      "name": "Kessler Reisen AG",
+      "country": "CH"
+    },
+    "amount": 3895.84,
+    "currency": "CHF",
+    "fx_rate_to_chf": 1.0,
+    "status": "booked",
+    "tags": [
+      "disputed"
+    ],
+    "category": "travel"
+  },
+  {
+    "txn_id": "T0030",
+    "booked_at": "2026-03-02",
+    "account": "A4",
+    "counterparty": {
+      "name": "Pole Star Energy SA",
+      "country": "FR"
+    },
+    "amount": 4033.37,
+    "currency": "GBP",
+    "fx_rate_to_chf": 1.12,
+    "status": "failed",
+    "tags": [],
+    "category": "rent"
+  },
+  {
+    "txn_id": "T0031",
+    "booked_at": "2026-03-03",
+    "account": "A1",
+    "counterparty": {
+      "name": "Helvetia Payroll AG",
+      "country": "CH"
+    },
+    "amount": null,
+    "currency": "USD",
+    "fx_rate_to_chf": 0.88,
+    "status": "booked",
+    "tags": [],
+    "category": "supplies"
+  },
+  {
+    "txn_id": "T0032",
+    "booked_at": "2026-03-04",
+    "account": "A3",
+    "counterparty": {
+      "name": "Zurich Office Rent GmbH",
+      "country": "CH"
+    },
+    "amount": 108.43,
+    "currency": "EUR",
+    "fx_rate_to_chf": 0.94,
+    "status": "booked",
+    "tags": [],
+    "category": "logistics"
+  },
+  {
+    "txn_id": "T0033",
+    "booked_at": "2026-03-05",
+    "account": "A5",
+    "counterparty": {
+      "name": "Nordwind Logistics BV",
+      "country": "NL"
+    },
+    "amount": 245.96,
+    "currency": "CHF",
+    "fx_rate_to_chf": 1.0,
+    "status": "booked",
+    "tags": [],
+    "category": "payroll"
+  },
+  {
+    "txn_id": "T0034",
+    "booked_at": "2026-03-06",
+    "account": "A2",
+    "counterparty": {
+      "name": "Arc Cloud Services Inc",
+      "country": "US"
+    },
+    "amount": 89.9,
+    "currency": "GBP",
+    "fx_rate_to_chf": 1.12,
+    "status": "pending",
+    "tags": [],
+    "category": "tax"
+  },
+  {
+    "txn_id": "T0035",
+    "booked_at": "2026-03-07",
+    "account": "A4",
+    "counterparty": {
+      "name": "Baumann Druck AG",
+      "country": "CH"
+    },
+    "amount": 521.02,
+    "currency": "USD",
+    "fx_rate_to_chf": 0.88,
+    "status": "booked",
+    "tags": [],
+    "category": "software"
+  },
+  {
+    "txn_id": "T0036",
+    "booked_at": "2026-03-08",
+    "account": "A1",
+    "counterparty": {
+      "name": "Lumen Analytics Ltd",
+      "country": "GB"
+    },
+    "amount": 658.55,
+    "currency": "EUR",
+    "fx_rate_to_chf": 0.94,
+    "status": "failed",
+    "tags": [],
+    "category": "energy"
+  },
+  {
+    "txn_id": "T0037",
+    "booked_at": "2026-03-09",
+    "account": "A3",
+    "counterparty": {
+      "name": "Sudmarkt Espresso SRL",
+      "country": "IT"
+    },
+    "amount": 796.08,
+    "currency": "CHF",
+    "fx_rate_to_chf": 1.0,
+    "status": "booked",
+    "tags": [],
+    "category": "travel"
+  },
+  {
+    "txn_id": "T0038",
+    "booked_at": "2026-03-10",
+    "account": "A5",
+    "counterparty": {
+      "name": "Federal Tax Office",
+      "country": "CH"
+    },
+    "amount": -1200.0,
+    "currency": "GBP",
+    "fx_rate_to_chf": 1.12,
+    "status": "booked",
+    "tags": [
+      "refund"
+    ],
+    "category": "refund"
+  },
+  {
+    "txn_id": "T0039",
+    "booked_at": "2026-03-11",
+    "account": "A2",
+    "counterparty": {
+      "name": "Kessler Reisen AG",
+      "country": "CH"
+    },
+    "amount": 1071.14,
+    "currency": "USD",
+    "fx_rate_to_chf": 0.88,
+    "status": "booked",
+    "tags": [],
+    "category": "supplies"
+  },
+  {
+    "txn_id": "T0040",
+    "booked_at": "2026-03-12",
+    "account": "A4",
+    "counterparty": {
+      "name": "Pole Star Energy SA",
+      "country": "FR"
+    },
+    "amount": "N/A",
+    "currency": "EUR",
+    "fx_rate_to_chf": 0.94,
+    "status": "pending",
+    "tags": [],
+    "category": "logistics"
+  },
+  {
+    "txn_id": "T0041",
+    "booked_at": "2026-03-13",
+    "account": "A1",
+    "counterparty": {
+      "name": "Helvetia Payroll AG",
+      "country": "CH"
+    },
+    "amount": 1346.2,
+    "currency": "CHF",
+    "fx_rate_to_chf": 1.0,
+    "status": "booked",
+    "tags": [],
+    "category": "payroll"
+  },
+  {
+    "txn_id": "T0042",
+    "booked_at": "2026-03-14",
+    "account": "A3",
+    "counterparty": {
+      "name": "Zurich Office Rent GmbH",
+      "country": "CH"
+    },
+    "amount": 1483.73,
+    "currency": "GBP",
+    "fx_rate_to_chf": 1.12,
+    "status": "failed",
+    "tags": [],
+    "category": "tax"
+  },
+  {
+    "txn_id": "T0043",
+    "booked_at": "2026-03-15",
+    "account": "A5",
+    "counterparty": {
+      "name": "Nordwind Logistics BV",
+      "country": "NL"
+    },
+    "amount": 1621.26,
+    "currency": "USD",
+    "fx_rate_to_chf": 0.88,
+    "status": "booked",
+    "tags": [],
+    "category": "software"
+  },
+  {
+    "txn_id": "T0044",
+    "booked_at": "2026-03-16",
+    "account": "A2",
+    "counterparty": {
+      "name": "Arc Cloud Services Inc",
+      "country": "US"
+    },
+    "amount": 0.0,
+    "currency": "EUR",
+    "fx_rate_to_chf": 0.94,
+    "status": "booked",
+    "tags": [],
+    "category": "energy"
+  },
+  {
+    "txn_id": "T0045",
+    "booked_at": "2026-03-17",
+    "account": "A4",
+    "counterparty": {
+      "name": "Baumann Druck AG",
+      "country": "CH"
+    },
+    "amount": 1896.32,
+    "currency": "CHF",
+    "fx_rate_to_chf": 1.0,
+    "status": "booked",
+    "tags": [],
+    "category": "travel"
+  },
+  {
+    "txn_id": "T0046",
+    "booked_at": "2026-03-18",
+    "account": "A1",
+    "counterparty": {
+      "name": "Lumen Analytics Ltd",
+      "country": "GB"
+    },
+    "amount": 2033.85,
+    "currency": "GBP",
+    "fx_rate_to_chf": 1.12,
+    "status": "pending",
+    "tags": [
+      "recurring",
+      "disputed"
+    ],
+    "category": "rent"
+  },
+  {
+    "txn_id": "T0047",
+    "booked_at": "2026-03-19",
+    "account": "A3",
+    "counterparty": {
+      "name": "Sudmarkt Espresso SRL",
+      "country": "IT"
+    },
+    "amount": 2171.38,
+    "currency": "USD",
+    "fx_rate_to_chf": 0.88,
+    "status": "booked",
+    "tags": [],
+    "category": "supplies"
+  },
+  {
+    "txn_id": "T0048",
+    "booked_at": "2026-03-20",
+    "account": "A5",
+    "counterparty": {
+      "name": "Federal Tax Office",
+      "country": "CH"
+    },
+    "amount": 2308.91,
+    "currency": "EUR",
+    "fx_rate_to_chf": 0.94,
+    "status": "failed",
+    "tags": [],
+    "category": "logistics"
+  },
+  {
+    "txn_id": "T0049",
+    "booked_at": "2026-03-21",
+    "account": "A2",
+    "counterparty": {
+      "name": "Kessler Reisen AG",
+      "country": "CH"
+    },
+    "amount": 2446.44,
+    "currency": "CHF",
+    "fx_rate_to_chf": 1.0,
+    "status": "booked",
+    "tags": [],
+    "category": "payroll"
+  },
+  {
+    "txn_id": "T0050",
+    "booked_at": "2026-03-22",
+    "account": "A4",
+    "counterparty": {
+      "name": "Pole Star Energy SA",
+      "country": "FR"
+    },
+    "amount": 2583.97,
+    "currency": "GBP",
+    "fx_rate_to_chf": 1.12,
+    "status": "booked",
+    "tags": [],
+    "category": "tax"
+  },
+  {
+    "txn_id": "T0025",
+    "booked_at": "2026-03-27",
+    "account": "A4",
+    "counterparty": {
+      "name": "Baumann Druck AG",
+      "country": "CH"
+    },
+    "amount": 3345.72,
+    "currency": "CHF",
+    "fx_rate_to_chf": 1.0,
+    "status": "booked",
+    "tags": [],
+    "category": "payroll"
+  }
+]

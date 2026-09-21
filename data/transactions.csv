@@ -1,0 +1,52 @@
+txn_id,booked_at,account,counterparty,counterparty_country,category,amount,currency,fx_rate_to_chf,status
+T0001,2026-03-01,A1,Helvetia Payroll AG,CH,payroll,45.00,CHF,1.0,booked
+T0002,2026-03-02,A3,Zurich Office Rent GmbH,CH,tax,182.53,GBP,1.12,booked
+T0003,2026-03-03,A5,Nordwind Logistics BV,NL,software,320.06,usd,0.88,booked
+T0004,2026-03-04,A2,Arc Cloud Services Inc,US,energy,457.59,EUR,0.94,pending
+T0005,2026-03-05,A4,Baumann Druck AG,CH,travel,595.12,CHF,1.0,booked
+T0006,2026-03-06,A1,Lumen Analytics Ltd,GB,rent,732.65,GBP,1.12,failed
+T0007,2026-03-07,A3,Sudmarkt Espresso SRL,IT,supplies,,USD,0.88,booked
+T0008,2026-03-08,A5,Federal Tax Office,CH,logistics,1007.71,EUR,0.94,booked
+T0009,2026-03-09,A2,Arc  Cloud   Services Inc,CH,payroll,1145.24,CHF,1.0,booked
+T0010,2026-03-10,A4,Pole Star Energy SA,FR,tax,1282.77,GBP,1.12,pending
+T0011,2026-03-11,A1,Helvetia Payroll AG,CH,software,1420.30,USD,,booked
+T0012,2026-03-12,A3,Zurich Office Rent GmbH,CH,energy,1557.83,EUR,0.94,failed
+T0013,2026-03-13,A5,Nordwind Logistics BV,NL,travel,0,CHF,1.0,booked
+T0014,2026-03-14,A2,Arc Cloud Services Inc,US,rent,1832.89,GBP,1.12,booked
+T0015,2026-03-15,A4,Baumann Druck AG,CH,supplies,1970.42,USD,0.88,booked
+T0016,2026-03-16,A1,Lumen Analytics Ltd,GB,logistics,2107.95,EUR,0.94,pending
+T0017,2026-03-17,A3,Sudmarkt Espresso SRL,IT,payroll,2245.48,chf,1.0,booked
+T0018,2026-03-18,A5,Federal Tax Office,CH,tax,2383.01,GBP,1.12,failed
+T0019,2026-03-19,A2,Kessler Reisen AG,CH,,2520.54,USD,0.88,booked
+T0020,2026-03-20,A4,Pole Star Energy SA,FR,energy,2658.07,EUR,0.94,booked
+T0021,2026-03-21,A1,Helvetia Payroll AG,CH,refund,-480.25,CHF,1.0,booked
+T0022,2026-03-22,A3,Zurich Office Rent GmbH,CH,rent,2933.13,GBP,1.12,pending
+T0023,2026-03-23,A5, Lumen Analytics Ltd ,NL,supplies,3070.66,USD,0.88,booked
+T0024,2026-03-24,A2,Arc Cloud Services Inc,US,logistics,3208.19,EUR,0.94,failed
+T0025,2026-03-25,A4,Baumann Druck AG,CH,payroll,3345.72,CHF,1.0,booked
+T0026,2026-03-26,A1,Lumen Analytics Ltd,GB,tax,3483.25,GBP,0,booked
+T0027,2026-03-27,A3,Sudmarkt Espresso SRL,IT,software,3620.78,USD,0.88,booked
+T0028,2026-03-28,A5,Federal Tax Office,CH,energy,"1,250.00",EUR,0.94,pending
+T0029,2026-03-01,A2,Kessler Reisen AG,CH,travel,3895.84,CHF,1.0,booked
+T0030,2026-03-02,A4,Pole Star Energy SA,FR,rent,4033.37,GBP,1.12,failed
+T0031,2026-03-03,A1,Helvetia Payroll AG,CH,supplies,,USD,0.88,booked
+T0032,2026-03-04,A3,Zurich Office Rent GmbH,CH,logistics,108.43,EUR,0.94,booked
+T0033,2026-03-05,A5,Nordwind Logistics BV,NL,payroll,245.96,CHF,1.0,booked
+T0034,2026-03-06,A2,Arc Cloud Services Inc,US,tax,  89.90  ,GBP,1.12,pending
+T0035,2026-03-07,A4,Baumann Druck AG,CH,software,521.02,USD,0.88,booked
+T0036,2026-03-08,A1,Lumen Analytics Ltd,GB,energy,658.55,EUR,0.94,failed
+T0037,2026-03-09,A3,Sudmarkt Espresso SRL,IT,travel,796.08,CHF,1.0,booked
+T0038,2026-03-10,A5,Federal Tax Office,CH,refund,-1200.00,GBP,1.12,booked
+T0039,2026-03-11,A2,Kessler Reisen AG,CH,supplies,1071.14,USD,0.88,booked
+T0040,2026-03-12,A4,Pole Star Energy SA,FR,logistics,N/A,EUR,0.94,pending
+T0041,2026-03-13,A1,Helvetia Payroll AG,CH,payroll,1346.20,CHF,1.0,booked
+T0042,2026-03-14,A3,Zurich Office Rent GmbH,CH,tax,1483.73,GBP,1.12,failed
+T0043,2026-03-15,A5,Nordwind Logistics BV,NL,software,1621.26,USD,0.88,booked
+T0044,2026-03-16,A2,Arc Cloud Services Inc,US,energy,0.00,EUR,0.94,booked
+T0045,2026-03-17,A4,Baumann Druck AG,CH,travel,1896.32,CHF,1.0,booked
+T0046,2026-03-18,A1,Lumen Analytics Ltd,GB,rent,2033.85,GBP,1.12,pending
+T0047,2026-03-19,A3,Sudmarkt Espresso SRL,IT,supplies,2171.38,USD,0.88,booked
+T0048,2026-03-20,A5,Federal Tax Office,CH,logistics,2308.91,EUR,0.94,failed
+T0049,2026-03-21,A2,Kessler Reisen AG,CH,payroll,2446.44,CHF,1.0,booked
+T0050,2026-03-22,A4,Pole Star Energy SA,FR,tax,2583.97,GBP,1.12,booked
+T0025,2026-03-27,A4,Baumann Druck AG,CH,payroll,3345.72,CHF,1.0,booked
