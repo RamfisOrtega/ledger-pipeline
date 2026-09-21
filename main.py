@@ -1,12 +1,16 @@
 
-import csv
 from ledger.read import Reader
 from ledger.validate import TransactionValidator
 from ledger.transform import TransactionMapper
 from ledger.summarize import RunSummarizer
-import json
 from pathlib import Path
 from ledger.model import Record
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s  %(levelname)-8s  %(message)s",
+)
 
 DATA = Path(__file__).parent / "data"
 CSV_PATH = DATA / "transactions.csv"
@@ -16,6 +20,7 @@ if __name__ == "__main__":
 
     dead_letters = []
     transactions = []
+    logger = logging.getLogger(__name__)
 
     # Fetch the data
 
@@ -39,6 +44,10 @@ if __name__ == "__main__":
     # Aggreate into a final summary
     summary = RunSummarizer.summarize(str(CSV_PATH), transactions, dead_letters)
 
-    print(f"{summary.source}: {summary.valid_count} valid, {summary.invalid_count} rejected")
+    logger.info(
+        "%s: %d valid, %d rejected",
+        summary.source, summary.valid_count, summary.invalid_count,
+    )
+    
     for reason, count in summary.reasons.items():
-        print(f"  {count:>3}  {reason.value}")
+        logger.warning("%3d  %s", count, reason.value)
