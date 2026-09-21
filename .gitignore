@@ -9,3 +9,6 @@ venv/
 dbt/target/
 dbt/dbt_packages/
 dbt/logs/
+
+# pipeline output
+out/
