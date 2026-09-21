@@ -12,6 +12,8 @@ logging.basicConfig(
     format="%(asctime)s  %(levelname)-8s  %(message)s",
 )
 
+logger = logging.getLogger(__name__)
+
 DATA = Path(__file__).parent / "data"
 CSV_PATH = DATA / "transactions.csv"
 JSON_PATH = DATA / "transactions.json"
@@ -20,7 +22,7 @@ if __name__ == "__main__":
 
     dead_letters = []
     transactions = []
-    logger = logging.getLogger(__name__)
+    
 
     # Fetch the data
 
@@ -41,7 +43,7 @@ if __name__ == "__main__":
             dead_letters.append(dead_letter)
 
 
-    # Aggreate into a final summary
+    # Aggregate into a final summary
     summary = RunSummarizer.summarize(str(CSV_PATH), transactions, dead_letters)
 
     logger.info(
