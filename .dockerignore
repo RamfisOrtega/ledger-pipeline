@@ -1,0 +1,12 @@
+astro
+.git
+.env
+airflow_settings.yaml
+logs/
+.venv
+airflow.db
+airflow.cfg
+dbt/target/
+dbt/logs/
+.pytest_cache/
+__pycache__/
