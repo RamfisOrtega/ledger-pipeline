@@ -1,15 +1,25 @@
 # ledger-pipeline
 
-A dependency-free Python ETL for a messy transaction ledger. Reads a CSV
-export, validates every row, and routes bad rows to a dead-letter queue with
-reason codes — nothing is dropped silently. A JSON export of the same data,
-plus Airflow and dbt on Databricks Free Edition, are the planned next layers.
+An end-to-end ETL over a deliberately messy transaction ledger. Dependency-free
+Python reads a CSV export, validates every row and routes bad rows to a
+dead-letter queue with reason codes — nothing is dropped silently. dbt models
+the results on Databricks, and Airflow runs the four steps in order.
+
+```
+main.py  ──▶  dbt seed  ──▶  dbt run  ──▶  dbt test
+```
+
+| Layer | Does | Depends on |
+|---|---|---|
+| `ledger/` | parse, validate, dead-letter, summarise | nothing but the standard library |
+| `dbt/` | staging views, a monthly spend mart, 6 data tests | dbt-databricks |
+| `dags/` | one DAG, four tasks, daily | Airflow 3 via the Astro CLI |
+
+Run the Python layer on its own with no setup at all:
 
 ```powershell
 python main.py
 ```
-
-No third-party packages. Python 3.12. `pytest` for the tests.
 
 ---
 
@@ -133,7 +143,7 @@ everything:
 | tags | cannot express them | a list |
 
 Only the CSV path is wired up today. Feeding the JSON through the same
-validator needs a normaliser in front of `Record` — see *Next up* below.
+validator needs a normaliser in front of `Record` — see *Not built yet* below.
 
 **Fail loudly.** `except Exception: return None` turns a broken job into a
 green job with an empty table. Catch the one error you can actually handle.
@@ -172,7 +182,14 @@ ledger/
 ├── read.py        CSV and JSON into raw dicts (only CSV is wired up)
 ├── validate.py    one rule per method, returns a ReasonCode or None
 ├── transform.py   validated Record -> frozen Transaction
-└── summarize.py   counts per run, including a tally per reason
+├── summarize.py   counts per run, including a tally per reason
+└── write.py       results out as CSV, for the warehouse to pick up
+dbt/models/
+├── staging/       stg_transactions, stg_dead_letters, schema.yml
+└── marts/         fct_monthly_spend
+dags/
+└── ledger_dag.py  the four tasks, in order
+config.py          every path in one place
 tests/             pytest, one file per module
 data/              the 51 rows, exported twice
 ```
@@ -191,16 +208,53 @@ real export, plus two smoke tests asserting the real files still have 51 rows
 
 ---
 
-## Next up
+## The warehouse layer
 
-`dags/` and `dbt/` are scaffolding. They are empty on purpose.
+`main.py` writes its two result files straight into `dbt/seeds/`, so no human
+copies anything between steps. dbt loads them and builds three models:
 
-| Layer | Job | Status |
+| Model | Materialised as | Why |
 |---|---|---|
-| `ledger/` | parse, validate, dead-letter | **working** |
-| JSON ingestion | normalise the nested export into a `Record` | planned |
-| Airflow | scheduling, retries, task ordering | planned |
-| dbt on Databricks Free Edition | joins, aggregates, marts — SQL, not Python | planned |
+| `stg_transactions` | view | casts `amount` to decimal, `booked_at` to date |
+| `stg_dead_letters` | view | **casts nothing** — see below |
+| `fct_monthly_spend` | table | booked spend per counterparty per month, in CHF |
 
-The CSV path is finished first on purpose. Orchestration around a pipeline
-that drops rows silently only schedules the problem.
+**Staging rejects stay as raw text on purpose.** Those rows were dead-lettered
+precisely because their values will not parse. Casting `1,250.00` to a decimal
+in the warehouse would fail for the same reason it failed in Python. They are
+kept readable so a human can look at them and a fixed parser can replay them.
+
+Six dbt tests assert what the Python layer already guarantees: `txn_id` unique
+and not null, `amount` not null, `currency` and `status` within their allowed
+sets, and every dead letter carrying a reason. Python enforces this today; the
+tests catch the day a change quietly stops enforcing it.
+
+---
+
+## Orchestration
+
+```powershell
+astro dev start
+```
+
+One DAG, four tasks, chained so each runs only if the one before it succeeded:
+
+```
+extract_validate_transform  →  dbt_seed  →  dbt_run  →  dbt_test
+```
+
+Credentials reach the containers through an untracked `.env`; `profiles.yml`
+reads them with `env_var`, so no token is ever committed.
+
+`dbt_test` is the task that earns its keep. A future export that breaks the
+rules turns it red, instead of quietly publishing wrong numbers.
+
+---
+
+## Not built yet
+
+| | |
+|---|---|
+| JSON ingestion | `data/transactions.json` holds the same 51 rows nested differently. Feeding it through the same validator needs a normaliser in front of `Record`. |
+| Incremental models | Every run is a full refresh. Fine at 51 rows, wrong at 51 million. |
+| A real source | The CSV is baked into the Docker image. In production it would be read from object storage each run. |
