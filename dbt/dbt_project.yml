@@ -1,0 +1,11 @@
+name: ledger
+version: "1.0.0"
+
+profile: ledger
+
+models:
+  ledger:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
