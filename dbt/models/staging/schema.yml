@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: stg_transactions
+    description: Validated transactions, typed.
+    columns:
+      - name: txn_id
+        description: Primary key, one row per transaction.
+        tests:
+          - unique
+          - not_null
+
+      - name: amount
+        tests:
+          - not_null
+
+      - name: currency
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["CHF", "EUR", "USD", "GBP"]
+
+      - name: status
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["booked", "pending", "failed"]
+
+  - name: stg_dead_letters
+    description: Rows the Python pipeline rejected, kept raw for replay.
+    columns:
+      - name: reason
+        tests:
+          - not_null
