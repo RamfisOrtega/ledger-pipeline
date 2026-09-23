@@ -16,3 +16,4 @@ out/
 # seeded copies of pipeline output
 dbt/seeds/*.csv
 dbt/.user.yml
+logs/
